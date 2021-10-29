@@ -1,0 +1,57 @@
+{namespace Dev24CustomFormField}
+
+/**
+ * Prints the form field.
+ */
+ {template .render}
+    {@param label: string}
+    {@param name: string}
+    {@param showLabel: bool}
+    {@param tip: string}
+    {@param value: ?}
+    {@param? _handleFieldChanged: any}
+    {@param? predefinedValue: any}
+    {@param? required: bool}
+    {@param? spritemap: string}
+
+    {call FieldBase.render}
+        {param contentRenderer kind="html"}
+            {call .content}
+                {param _handleFieldChanged: $_handleFieldChanged /}
+                {param name: $name /}
+                {param predefinedValue: $predefinedValue /}
+                {param value: $value /}
+            {/call}
+        {/param}
+        {param label: $label /}
+        {param name: $name /}
+        {param required: $required /}
+        {param showLabel: $showLabel /}
+        {param spritemap: $spritemap /}
+        {param tip: $tip /}
+    {/call}
+{/template}
+
+{template .content}
+    {@param name: string}
+    {@param value: ?}
+    {@param? _handleFieldChanged: any}
+    {@param? predefinedValue: any}
+    {let $attributes kind="attributes"}
+        class="ddm-field-dev24customformfield form-control dev24customformfield"
+
+        data-oninput="{$_handleFieldChanged}"
+
+        name="{$name}"
+
+        type="text"
+
+        {if $value}
+            value="{$value}"
+        {else}
+            value="{$predefinedValue}"
+        {/if}
+    {/let}
+
+    <input {$attributes}>
+{/template}

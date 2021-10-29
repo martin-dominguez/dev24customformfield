@@ -1,0 +1,28 @@
+{
+	"dependencies": {
+		"clay-button": "2.18.0",
+		"clay-icon": "2.18.0",
+		"metal-component": "2.16.8",
+		"metal-soy": "2.16.9",
+		"metal-state": "2.16.8"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.2.3",
+		"@babel/core": "^7.6.0",
+		"@babel/plugin-proposal-class-properties": "^7.5.5",
+		"@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+		"@babel/preset-env": "^7.4.2",
+				"babel-loader": "8.0.6",
+		"liferay-npm-bundler": "2.16.1",
+		"liferay-npm-bundler-preset-liferay-dev": "^2.0.0",
+		"metal-tools-soy": "4.3.2"
+			},
+	"main": "./",
+	"name": "dynamic-data-dev24customformfield-form-field",
+	"scripts": {
+		"build": "npm run build-soy && npm run build-js && liferay-npm-bundler",
+		"build-js": "babel --source-maps -d build/resources/main/META-INF/resources src/main/resources/META-INF/resources",
+		"build-soy": "metalsoy --externalMsgFormat \"Liferay.Language.get(‘\\$2’)\" --soyDeps \"./node_modules/clay-*/src/**/*.soy\" \"./node_modules/com.liferay.dynamic.data.mapping.form.field.type/META-INF/resources/+(FieldBase|components)/**/*.soy\""
+			},
+	"version": "1.0.0"
+}
