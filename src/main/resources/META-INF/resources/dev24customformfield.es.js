@@ -4,11 +4,11 @@ import {FieldBase} from 'dynamic-data-mapping-form-field-type/FieldBase/ReactFie
 /**
  * Dev24customformfield React Component
  */
-const Dev24CustomFormField = (props) => {
-	console.log(props);
+const Dev24CustomFormField = ({sayHelloTo, ...otherProps}) => {
+	console.log(sayHelloTo, otherProps);
 	return (
-		<FieldBase {...props}>
-			<h1>Hello World!</h1>
+		<FieldBase {...otherProps}>
+			<h1>Hello {sayHelloTo}!</h1>
 		</FieldBase>
 	);
 }
