@@ -2,6 +2,7 @@ package com.dev24.dynamic.data.mapping.form.field.type.form.field;
 
 import com.liferay.dynamic.data.mapping.form.field.type.BaseDDMFormFieldType;
 import com.liferay.dynamic.data.mapping.form.field.type.DDMFormFieldType;
+import com.liferay.dynamic.data.mapping.form.field.type.DDMFormFieldTypeSettings;
 import com.liferay.frontend.js.loader.modules.extender.npm.NPMResolver;
 
 import org.osgi.service.component.annotations.Component;
@@ -23,6 +24,13 @@ import org.osgi.service.component.annotations.Reference;
 	service = DDMFormFieldType.class
 )
 public class Dev24CustomFormFieldDDMFormFieldType extends BaseDDMFormFieldType {
+	
+	@Override
+	public Class<? extends DDMFormFieldTypeSettings>
+		getDDMFormFieldTypeSettings() {
+	
+		return Dev24CustomFormFieldDDMFormFieldTypeSettings.class;
+	}
 
 	@Override
 	public String getModuleName() {
