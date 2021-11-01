@@ -1,6 +1,51 @@
 # Overview
+This module has been created for /dev/24 2021, a Liferay Community Event.
 
-# Prequisites
+The main target of this session is letting know what are the keys when you want to leverage all the power of forms and create your own custom fields. No matter what, if it can be done with React you can use it in your forms.
+
+Although actually the Forms and Docs teams are working hard to document this feature and provide examples with great snippets of code trying to shed some light about the different pieces that you can use.
+
+# Prerequisites
+## Node.js
+[Node.js](https://nodejs.org/es/docs/) is a JavaScript runtime built on Chrome's V8 JavaScript engine, designed to build scalable network applications.
+**Version used for this session**: v12.19.0
+
+## npm
+[npm](https://docs.npmjs.com/cli/v7/commands/npm) is the package manager for the Node JavaScript platform. It puts modules in place so that node can find them, and manages dependency conflicts intelligently. It is extremely configurable to support a variety of use cases. Most commonly, you use it to publish, discover, install, and develop node programs.
+
+**Version used for this session**: 7.20.0
+
+## Blade CLI
+[Blade CLI](https://learn.liferay.com/dxp/latest/en/developing-applications/tooling/blade-cli/generating-projects-with-blade-cli.html) exists to create, build, and deploy Liferay projects in Liferay Workspaces. Once created, these projects can be imported into an IDE or worked on directly. Here you’ll learn the various ways in which you can create and manage Liferay projects.
+
+**Version used for this session**:blade version 4.0.10.SNAPSHOT202110281623
+
+## Liferay Portal
+I gues if you didn't know what Liferay Portal is, you wouldn't be here :) 
+
+**Version used for this session**: Liferay Portal 7.4 GA3
+
+**Note (Oct 31th 2021)**: I tryed to test this project with 7.4 GA4, but I found an error with Field deployment.
+
+## Other software that you may know
+Althoug these programs don't need to be installed directly, it will be installed automatically and it's worth it to know what they do.
+
+### React
+Well, the esence of this session. Our target is creating Form Field by using React, so I assume you know what React is. Anyway, [React or ReactJS](https://reactjs.org/) is a Javascript library for building user interfaces and the great thing with React is that it has been designed from the start for gradual adoption.
+
+**Version used for this session**: Currently Liferay Portal uses React: 16.12.0
+
+### Babel
+[Babel](https://babeljs.io/) is a JavaScript compiler. Basically translates JS next-gen code to browsers-compatible JS.
+
+We will use liferay-npm-bundler to compile our code through Babel.
+
+**Version used for this session**: Last version of the [`liferay-npm-bundler-loader-babel-loader`](https://github.com/liferay/liferay-frontend-projects/tree/master/maintenance/projects/js-toolkit/packages/liferay-npm-bundler-loader-babel-loader) includes version 6.26.3
+
+### liferay-npm-bundler
+[`liferay-npm-bundler`](https://github.com/liferay/liferay-frontend-projects/tree/master/maintenance/projects/js-toolkit/packages/liferay-npm-bundler) is a tool tool to process a Liferay widget project to produce an OSGi bundle containing the needed npm dependencies so that it can be run when deployed to the Portal
+
+**Version used for this session**: 2.27.0
 
 # Detailed Steps
 ## Chapter 0: Init Workspace and module from template
@@ -147,14 +192,15 @@ Let's create something useful: a field which autofields out the input box with l
 4. Get also the data in the front-end by using [Liferay JavaScript APIs](https://help.liferay.com/hc/es/articles/360029005792-Liferay-JavaScript-APIs) to preview the changes before saving. Note that also the [Headless APIs](https://learn.liferay.com/dxp/latest/en/headless-delivery/consuming_apis.html) can be used.
 
 ## Chapter 7: What else?
-* Custom Validations
+In Liferay Portal 7.4 GA2 we had an announcement from the Forms team about two brand new features
+* Confirm Fields
 * Actions between page changes
 
 ## Appendix: More examples:
-* [Complete User Data Form Field]
-* [Image Checkbox]
-* [Slider]
-*
+* [Complete User Data Form Field (7.3-master/7.4)](https://github.com/martin-dominguez/custom-liferay-ddm-form-fields/tree/master/modules/userdata-field)
+* [Image Checkbox (7.3)](https://github.com/lfrsales/custom-liferay-ddm-form-fields/tree/master/modules/image-checkbox)
+* [Character Limited Text (7.3)](https://github.com/lfrsales/custom-liferay-ddm-form-fields/tree/master/modules/character-limited-text)
+* [Slider (7.3)](https://github.com/marcosapmf/slider)
 
 
 
